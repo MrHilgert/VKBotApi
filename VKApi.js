@@ -1,4 +1,4 @@
-var ehttp = new (require('../../EasyHttp'))();
+var ehttp = new (require('./EasyHttp'))();
 
 var VK = function() {
     var self = this;
