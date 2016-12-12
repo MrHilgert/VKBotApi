@@ -19,12 +19,13 @@ var BotUtils = function(bot){
     };
 };
 
-
-var bot = function(config){
+var bot = function(){
 
     var self = this;
 
     var selfUser = null;
+
+    var utils = new BotUtils(self);
 
     self.auth = function(login, pass){ 
         return new Promise(function(resolve, reject) {
@@ -61,10 +62,6 @@ var bot = function(config){
 
     this.getSelf = function(){
         return selfUser;
-    };
-
-    this.getConfig = function(){
-        return config;
     };
 
     this._sendMessage = function(message, data){

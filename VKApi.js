@@ -17,7 +17,7 @@ var VK = function() {
         return new Promise((resolve, reject) => {
             if(!_params) _params = {};
             _params.access_token = self.token;
-            _params.v = 5.60;
+            _params.v = "5.60";
             ehttp.promiseGet('https://api.vk.com/method/' + _method, _params).then((resp) => resolve(JSON.parse(resp)));
         });
     };
