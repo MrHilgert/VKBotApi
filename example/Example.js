@@ -16,7 +16,7 @@ function run(){
     var lp = new LongPoll(bot.getVK(), bot.getSelf());                      // LongPoll
 
     var log = ((message) => {                                               // Message Logger
-        console.log("[MSG] [{0}/ {1}] {2}".format(message.title, message.from, message.body, message.attachments));
+        console.log("[MSG] [{0}/ {1}] {2}".format(message.title, message.from, message.body));
     });
 
     lp.on('pre_message', log);                                              // Register Logger
