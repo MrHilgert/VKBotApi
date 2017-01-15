@@ -27,8 +27,8 @@ function run(){
         bot._sendMessage('HelloWorld!', message);                           // Send response
     });
 
-    cm.registerCommand(["hi", "helo"], (message) => {                       // Add new command with aliases
-        bot.getUtils().getUser({'uesr_id': message.from}).then((sender) => {// Get sender info
+    cm.registerCommand(["hi", "hello"], (message) => {                       // Add new command with aliases
+        bot.getUtils().getUser({'user_id': message.from}).then((sender) => { // Get sender info
             sender = sender.response[0];
             bot._sendMessage('Hello {0} {1}!'.format(sender.first_name, sender.last_name), message);    
         });

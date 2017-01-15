@@ -26,6 +26,13 @@ var LongPoll = function(vk, selfUser){
 
         if(res.failed){
             if(res.failed == 1) serverInfo.ts = res.ts;
+            
+            if(res.failed >= 2){
+                bot.getVK().request('messages.getLongPollServer').then((resp) => {
+                    self.start(resp);
+                });
+            }
+            
             return;
         }
 
